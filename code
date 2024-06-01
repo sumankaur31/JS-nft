@@ -1,0 +1,48 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+//  a variable to holding NFT's
+const nfts=[];
+// function to create an NFT object using the parameters 
+//passed to it , and store it in the variable above.
+function mintNFT (id,name,gender) {
+    let nft={
+        "Id" : id,
+        "Name" : name,
+        "Gender" : gender
+    };
+    nfts.push(nft);
+    console.log("NFT added successfully")
+}
+
+// function to print the metadata of all the NFTS stored
+function listNFTs () {
+    for (let i=0;i<nfts.length;i++){
+        console.log("\nID :\t "+ nfts[i].Id);
+        console.log("Name :\t "+ nfts[i].Name);
+        console.log("Gender : "+ nfts[i].Gender);
+    }
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\nTotal number of NFTs = "+ nfts.length);
+
+}
+
+//  function calls below this line
+
+mintNFT(101,"Eva","F");
+mintNFT(102,"George","M");
+mintNFT(103,"John","M");
+mintNFT(104,"Alex","M");
+listNFTs();
+getTotalSupply();
